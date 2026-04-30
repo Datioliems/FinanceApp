@@ -1,0 +1,221 @@
+/* ============================================================
+   transactions.css — Styles riêng trang Giao dịch
+   Dùng bởi: app/Views/transactions/index.php
+            app/Views/transactions/create.php
+            app/Views/transactions/edit.php
+============================================================ */
+
+/* ── Stat mini-cards (trang danh sách) ───────────────────── */
+.tx-stat-card {
+    border-radius: 14px;
+    border: none;
+    height: 100%;
+    padding: 1rem 1.25rem;
+    transition: transform .2s, box-shadow .2s;
+}
+.tx-stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px -4px rgba(0,0,0,.09);
+}
+.tx-stat-card.income-bg  { background: #f0fdf4; }
+.tx-stat-card.expense-bg { background: #fef2f2; }
+.tx-stat-card.balance-bg-pos { background: #eff6ff; }
+.tx-stat-card.balance-bg-neg { background: #fef2f2; }
+.tx-stat-card.count-bg   { background: #f8fafc; }
+
+.tx-stat-card .stat-label {
+    font-size: .78rem;
+    color: #64748b;
+    margin-bottom: .25rem;
+}
+.tx-stat-card .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0;
+}
+.tx-stat-card .stat-sub {
+    font-size: .73rem;
+    color: #94a3b8;
+    margin-top: .15rem;
+}
+
+/* ── Filter bar ──────────────────────────────────────────── */
+.tx-filter-card {
+    border-radius: 14px;
+    border: 1.5px solid #f1f5f9;
+    background: #fff;
+    margin-bottom: 1rem;
+}
+.tx-filter-card .card-body { padding: .75rem 1rem; }
+
+/* ── Daily summary table ─────────────────────────────────── */
+.daily-summary-card {
+    border-radius: 14px;
+    border: 1.5px solid #f1f5f9;
+    background: #fff;
+    margin-bottom: 1rem;
+    overflow: hidden;
+}
+.daily-summary-card .card-header {
+    background: #fff;
+    border-bottom: 1px solid #f1f5f9;
+    padding: .65rem 1rem;
+}
+
+/* ── Transaction table ───────────────────────────────────── */
+.tx-table-wrap {
+    border-radius: 14px;
+    border: 1.5px solid #f1f5f9;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* ── Form: create / edit ─────────────────────────────────── */
+.tx-form-card {
+    border-radius: 18px;
+    border: 1.5px solid #f1f5f9;
+    box-shadow: 0 4px 20px -6px rgba(0,0,0,.08);
+}
+.tx-form-card .card-body { padding: 1.75rem; }
+
+/* ── Category dropdown button ────────────────────────────── */
+.cat-dropdown-btn {
+    border-radius: 8px;
+    border: 1.5px solid #e2e8f0;
+    background: #fff;
+    min-height: 38px;
+    transition: border-color .2s, box-shadow .2s;
+}
+.cat-dropdown-btn:focus,
+.cat-dropdown-btn:active {
+    border-color: #93c5fd;
+    box-shadow: 0 0 0 4px rgba(59,130,246,.1);
+    outline: none;
+}
+
+/* ── Empty state ─────────────────────────────────────────── */
+.tx-empty {
+    text-align: center;
+    padding: 3.5rem 1rem;
+    color: #94a3b8;
+}
+.tx-empty i {
+    font-size: 2.8rem;
+    display: block;
+    margin-bottom: .75rem;
+    opacity: .4;
+}
+
+/* ══════════════════════════════════════════════════════════
+   PAGINATION — .pager-*
+   Dùng bởi: App\Helpers\Paginator::render()
+══════════════════════════════════════════════════════════ */
+
+/* Wrapper: info bên trái + nút bên phải */
+.pager-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .75rem;
+    padding: .5rem 0;
+}
+
+/* Thông tin "1–10 / 87 kết quả" */
+.pager-info {
+    font-size: .8rem;
+    color: #94a3b8;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* Danh sách nút */
+.pager-list {
+    display: flex;
+    align-items: center;
+    gap: .25rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Nút chung */
+.pager-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 36px;
+    height: 36px;
+    padding: 0 .55rem;
+    border-radius: 9px;
+    font-size: .85rem;
+    font-weight: 500;
+    color: #475569;
+    background: #fff;
+    border: 1.5px solid #e2e8f0;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .15s, border-color .15s, color .15s,
+                transform .12s, box-shadow .15s;
+    user-select: none;
+    line-height: 1;
+}
+.pager-btn:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+    color: #0f172a;
+    transform: translateY(-1px);
+    box-shadow: 0 3px 10px rgba(0,0,0,.07);
+}
+.pager-btn:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Trang đang active */
+.pager-btn.pager-active {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    border-color: transparent;
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(99, 102, 241, .35);
+    cursor: default;
+    pointer-events: none;
+}
+
+/* Nút bị vô hiệu (prev/next khi ở đầu/cuối) */
+.pager-btn.pager-disabled {
+    color: #cbd5e1;
+    background: #f8fafc;
+    border-color: #f1f5f9;
+    cursor: not-allowed;
+    pointer-events: none;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Dấu "…" */
+.pager-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 36px;
+    font-size: .85rem;
+    color: #94a3b8;
+    letter-spacing: .05em;
+}
+
+/* Responsive: trên mobile chỉ hiện prev/next + trang hiện tại */
+@media (max-width: 480px) {
+    .pager-wrap {
+        justify-content: center;
+    }
+    .pager-info { display: none; }
+    /* Ẩn các nút số, giữ prev/next và active */
+    .pager-list li:not(:first-child):not(:last-child) .pager-btn:not(.pager-active),
+    .pager-list li:not(:first-child):not(:last-child) .pager-ellipsis {
+        display: none;
+    }
+}
