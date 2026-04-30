@@ -176,5 +176,3 @@ Chống Cross-Site Request Forgery — kẻ tấn công không thể giả mạo
 
 **5. Tại sao mọi query đều có `WHERE user_id = ?`?**
 Multi-user app — thiếu điều kiện này thì user A xem/xoá được dữ liệu của user B.
-#   F i n a n c e A p p  
- 
